@@ -1,7 +1,10 @@
 # Space-Shooter
-- Eu sou um grande fã de jogos antigos e fazer esse projeto foi especial para mim; <br>
-- Mas eu gostei muito de cada etapa, desde a programação no JS até a estilização dos elementos; <br>
-- Não foi fácil, foi um grande exercício de manipulação do DOM e condições; <br>
-- Todos os elementos da tela foram devidamente posicionados com o uso de flexbox; <br>
-- Em algum momento eu irei fazer um novo Space Shooter com novas tecnologias e aprimorando a jogabilidade, estética e sonorização! <br><br>
-![image](https://user-images.githubusercontent.com/101783823/165397816-bfba8156-a825-42f5-8e00-90051ff754f2.png)
+- Eu não sou o criador original desse jogo, mas como gostei muito do projeto, resolvi fazer um fork para modificar e experimentar minha "própria" versão.
+- Foi e ainda esta sendo muito bom alterar esse código, ajudou bastante no meu aprendizado e pude colocar em prática minhas habilidades.
+- Além de um bom desafio é muito legal olhar o código de outra pessoa e tentar entender e a partir daí fazer nossas próprias modificações. <br><br>
+![image](./assets/images/screenshot.png)
+
+-------------------------
+## O código original pertence a Victor Barbosa
+
+- [Clique aqui](https://github.com/V1ctorBarbosa/Space-Shooter) caso queira acessar.

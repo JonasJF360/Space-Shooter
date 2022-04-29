@@ -11,10 +11,13 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: url("../images/space.png");
     background-size: cover;
     font-family: 'Press Start 2P', cursive;
-    text-align: center;
     color: white;
     min-height: 100vh;
 }
@@ -131,6 +134,7 @@ body {
 #gameOver {
     background-color: black;
     z-index: 1;
+    text-align: center;
     position: absolute;
     display: none;
 }
