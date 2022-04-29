@@ -1,4 +1,4 @@
-((/* App */) => {
+(( /* App */ ) => {
 
     const board = document.querySelector('#board');
     const jet = document.querySelector('#jet');
@@ -9,13 +9,16 @@
     const explosion = document.querySelector('#explosion')
     const rocks = document.getElementsByClassName('rocks');
 
+    let widthBord = board.offsetWidth;
+
     window.addEventListener('keydown', (e) => {
         let tecla = e.code;
+
         let left = parseInt(window.getComputedStyle(jet).getPropertyValue('left'));
 
-        if (tecla === 'ArrowLeft' && left > 0) 
+        if (tecla === 'ArrowLeft' && left > 0)
             jet.style.left = left - 10 + 'px';
-        if (tecla === 'ArrowRight' && left <= 460)
+        if (tecla === 'ArrowRight' && left <= widthBord - 40)
             jet.style.left = left + 10 + 'px';
         if (tecla === 'ArrowUp' || tecla === 'Space') {
             let bullet = document.createElement('div');
@@ -56,9 +59,11 @@
     });
 
     const generaterocks = setInterval(() => {
+        if (widthBord !== board.offsetWidth) widthBord = board.offsetWidth;
+
         let rock = document.createElement('div');
         rock.classList.add('rocks');
-        rock.style.left = Math.floor(Math.random() * 450) + 'px';
+        rock.style.left = Math.floor(Math.random() * (widthBord - 50)) + 'px';
 
         board.appendChild(rock);
     }, 1000);
