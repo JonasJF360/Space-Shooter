@@ -11,6 +11,20 @@
 </head>
 
 <body>
+    <!-- HELP MENU -->
+    <div class="main-help">
+        <div class="help-container">
+            <div class="close-help">
+                <span id="close">x</span>
+            </div>
+            <h1>Main help</h1>
+            <p>Your goal is to destroy as many enemies as possible, and for this you will have to follow the follower
+                step by step:</p>
+            <p>1. Press the left or right key to move the ship across the board.</p>
+            <p>2. Press the up key or space to activate the weapon.</p>
+
+        </div>
+    </div>
 
     <div>
         <h1 class="title">Space Shooter</h1>
@@ -22,12 +36,16 @@
 
         <div class="game">
             <div id="board">
+                <div class="points">
+                    <div class="help"><a id="help" href="#">?</a></div>
+                    <div class="points-box">0</div>
+                </div>
                 <div class="rocks"></div>
                 <div id="jet"></div>
                 <div id="gameOver">
-                    <p>You lost!</p>
-                    <p>Sometimes that happens in life, but never give up!</p>
-                    <p id="restart" onclick="restart()">Try again!</p>
+                    <p><span>&#128528;</span> You lose...</p>
+                    <p>Sometimes it happens in life, but never give up!</p>
+                    <p id="restart">Try again!</p>
                 </div>
             </div>
         </div>
@@ -35,17 +53,13 @@
         <!--MENU-->
 
         <div class="menu">
-            <div class="points">
-                <div id="points-box">0</div>
-            </div>
-            <div class="controls">
-                <div class="controls-painel">
-                    <p class="controls1">shoot <span class="space-bar">space</span></p>
-                    <p class="controls2">move <span class="arrow-left">&#8592;</span><span
-                            class="arrow-right">&#8594;</span></p>
-                </div>
+            <div class="controls-painel">
+                <p class="controls1">shoot <span class="space-bar">space</span></p>
+                <p class="controls2">move <span class="arrow-left">&#8592;</span><span
+                        class="arrow-right">&#8594;</span></p>
             </div>
         </div>
+
 
     </div>
 
