@@ -7,10 +7,11 @@
     const mainHelp = document.querySelector('.main-help')
     const shot = document.querySelector('#shot');
     const explosion = document.querySelector('#explosion');
+    const level = document.querySelector('.level');
     const rocks = document.getElementsByClassName('rocks');
 
     let widthBord = board.offsetWidth;
-
+    let heightBord = board.offsetHeight;
 
     window.addEventListener('keydown', (e) => {
         let tecla = e.code;
@@ -51,6 +52,17 @@
                                 parseInt(pointsBox.textContent) + 1;
                             explosion.play();
                             explosion.currentIime = 0;
+                            kill--;
+                            if (dificult === minDificult) {
+                                level.innerText = 'Max level'
+                            } else if (kill === 0) {
+                                if (currentIntervalId) clearInterval(currentIntervalId);
+                                dificultGame();
+                                atualLevel++;
+                                level.innerText = `Level ${atualLevel}`
+
+                                kill = maxlevel;
+                            }
                         }
                     }
                 }
@@ -65,15 +77,34 @@
         }
     });
 
-    const generaterocks = setInterval(() => {
-        if (widthBord !== board.offsetWidth) widthBord = board.offsetWidth;
+    const maxlevel = 8;
+    const minDificult = 800;
+    let currentIntervalId = null;
+    let dificult = 5000;
+    let kill = maxlevel;
+    let atualLevel = 1;
 
-        let rock = document.createElement('div');
-        rock.classList.add('rocks');
-        rock.style.left = Math.floor(Math.random() * (widthBord - 50)) + 'px';
 
-        board.appendChild(rock);
-    }, 1000);
+    window.addEventListener('load', () => {
+        dificultGame();
+    });
+
+    function dificultGame() {
+        dificult <= minDificult ? dificult = minDificult : dificult -= 500;
+        console.log(dificult)
+
+        currentIntervalId = setInterval(() => {
+            if (widthBord !== board.offsetWidth) widthBord = board.offsetWidth;
+            if (heightBord !== board.offsetHeight) heightBord = board.offsetHeight;
+
+            let rock = document.createElement('div');
+            rock.classList.add('rocks');
+            rock.style.left = Math.floor(Math.random() * (widthBord - 50)) + 'px';
+
+            board.appendChild(rock);
+        }, dificult);
+    }
+
 
     const moverocks = setInterval(() => {
 
@@ -83,9 +114,9 @@
                 let rocktop = parseInt(
                     window.getComputedStyle(rock).getPropertyValue('top')
                 );
-                if (rocktop >= 475) {
+                if (rocktop >= heightBord - 25) {
                     clearInterval(moverocks);
-                    clearInterval(generaterocks);
+                    clearInterval(currentIntervalId);
                     gameOver.style.display = 'block'
                     return
                 }
@@ -94,6 +125,7 @@
             }
         }
     }, 450);
+
 
     document.onclick = restartGame;
 
@@ -105,6 +137,16 @@
         if (e.target.id === 'active-gun') {
             window.dispatchEvent(new KeyboardEvent('keydown', {
                 code: 'Space'
+            }));
+        }
+        if (e.target.id === 'to-left') {
+            window.dispatchEvent(new KeyboardEvent('keydown', {
+                code: 'ArrowLeft'
+            }));
+        }
+        if (e.target.id === 'to-rigth') {
+            window.dispatchEvent(new KeyboardEvent('keydown', {
+                code: 'ArrowRight'
             }));
         }
         if (e.target.id === 'to-left') {
