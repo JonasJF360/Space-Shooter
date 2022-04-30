@@ -6,30 +6,37 @@
     const gameOver = document.querySelector('#gameOver');
     const mainHelp = document.querySelector('.main-help')
     const shot = document.querySelector('#shot');
-    const explosion = document.querySelector('#explosion')
+    const explosion = document.querySelector('#explosion');
     const rocks = document.getElementsByClassName('rocks');
 
     let widthBord = board.offsetWidth;
 
+
     window.addEventListener('keydown', (e) => {
         let tecla = e.code;
-
         let left = parseInt(window.getComputedStyle(jet).getPropertyValue('left'));
+        let bullet = document.createElement('div');
 
-        if (tecla === 'ArrowLeft' && left > 0)
+        if (tecla === 'ArrowLeft' && left > 0) toLeft();
+        if (tecla === 'ArrowRight' && left <= widthBord - 40) toRigth();
+        if (tecla === 'ArrowUp' || tecla === 'Space') activeGun();
+
+        function toLeft() {
             jet.style.left = left - 10 + 'px';
-        if (tecla === 'ArrowRight' && left <= widthBord - 40)
+        }
+
+        function toRigth() {
             jet.style.left = left + 10 + 'px';
-        if (tecla === 'ArrowUp' || tecla === 'Space') {
-            let bullet = document.createElement('div');
+        }
+
+        function activeGun() {
             bullet.classList.add('bullets');
             board.appendChild(bullet);
             shot.play();
             shot.currentIime = 0;
 
             const movebullet = setInterval(() => {
-                for (let i = 0; i < rocks.length; i++) {
-                    let rock = rocks[i];
+                for (let rock of rocks) {
                     if (rock !== 'undefined') {
                         let rockbound = rock.getBoundingClientRect();
                         let bulletbound = bullet.getBoundingClientRect();
@@ -94,6 +101,23 @@
         if (e.target.id === 'help') mainHelp.style.display = 'flex';
         if (e.target.id === 'close') mainHelp.style.display = 'none';
         if (e.target.id === 'restart') return window.location.reload();
+
+        if (e.target.id === 'active-gun') {
+            window.dispatchEvent(new KeyboardEvent('keydown', {
+                code: 'Space'
+            }));
+        }
+        if (e.target.id === 'to-left') {
+            window.dispatchEvent(new KeyboardEvent('keydown', {
+                code: 'ArrowLeft'
+            }));
+        }
+        if (e.target.id === 'to-rigth') {
+            window.dispatchEvent(new KeyboardEvent('keydown', {
+                code: 'ArrowRight'
+            }));
+        }
+
     }
 
 })();
