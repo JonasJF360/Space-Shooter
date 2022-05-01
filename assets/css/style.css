@@ -190,27 +190,33 @@ body {
 
 /*** Game Over ***/
 
-
 #gameOver {
+    display: none;
+}
+
+#gameOver,
+.startGame {
     background: black;
     z-index: 3;
     height: 100%;
     text-align: center;
     position: absolute;
-    display: none;
 }
 
-#gameOver span {
+#gameOver span,
+.startGame span {
     font-size: 1.8rem;
 }
 
-#restart {
+#restart,
+#start {
     border: solid white;
     padding: 1rem;
     cursor: pointer;
 }
 
-#restart:hover {
+#restart:hover,
+#start:hover {
     background: #fff;
     color: #000;
 }
