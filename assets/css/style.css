@@ -24,6 +24,22 @@ body {
     min-height: 100vh;
 }
 
+/* Change Language */
+.change-language {
+    position: fixed;
+    z-index: 8;
+    top: 0;
+    right: 0;
+    margin: 2rem;
+}
+
+.change-language img {
+    position: relative;
+    width: 3rem;
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+}
+
 /* Main Help */
 .main-help {
     position: fixed;
@@ -48,9 +64,14 @@ body {
     padding: 2rem;
 }
 
-.help-container >* {
+.help-container>* {
     margin: 1rem;
     padding: 1rem;
+    width: 100%;
+}
+
+.help-container h1 {
+    text-align: center;
 }
 
 .close-help {
@@ -148,7 +169,7 @@ body {
     width: 5rem;
     height: 5rem;
     background: url("../images/alien.png");
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -207,7 +228,8 @@ p {
 .level {
     margin-top: 2rem;
     color: yellow;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 .help a {
@@ -240,11 +262,12 @@ p {
 .controls-painel>* {
     margin: 0;
 }
-.directon{
+
+.directon {
     display: flex;
 }
 
-.arrow-right{
+.arrow-right {
     margin-left: 2rem;
 }
 
@@ -282,9 +305,7 @@ p {
 }
 
 @media (max-width:500px) {
-    body {
-        justify-content: start;
-    }
+    
     #board {
         width: 98vw;
         height: 40rem;

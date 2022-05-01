@@ -1,17 +1,20 @@
 (( /* App */ ) => {
 
     const board = document.querySelector('#board');
+    let widthBord = board.offsetWidth;
+    let heightBord = board.offsetHeight;
+    
     const jet = document.querySelector('#jet');
     const pointsBox = document.querySelector('.points-box');
+    const rocks = document.getElementsByClassName('rocks');
     const gameOver = document.querySelector('#gameOver');
+
     const mainHelp = document.querySelector('.main-help')
     const shot = document.querySelector('#shot');
     const explosion = document.querySelector('#explosion');
-    const level = document.querySelector('.level');
-    const rocks = document.getElementsByClassName('rocks');
 
-    let widthBord = board.offsetWidth;
-    let heightBord = board.offsetHeight;
+    const level = document.querySelector('.level');
+
 
     window.addEventListener('keydown', (e) => {
         let tecla = e.code;
