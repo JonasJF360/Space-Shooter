@@ -33,11 +33,25 @@ body {
     margin: 2rem;
 }
 
+.change-language a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .change-language img {
     position: relative;
     width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     border: 0.2rem solid #fff;
+}
+
+.change-language .activate{
+    z-index: 1;
+}
+
+.change-language .margin-edit{
+    margin-right: -3rem;
 }
 
 /* Main Help */
@@ -91,7 +105,7 @@ body {
 
 
 .title {
-    background-color: black;
+    background: black;
     display: inline-block;
     padding-top: 2rem;
 }
@@ -137,7 +151,7 @@ body {
     height: 50rem;
     margin: 2rem auto;
     border: 0.2rem solid white;
-    background-color: black;
+    background: rgba(0, 0, 0, 0.9);
     overflow: hidden;
 }
 
@@ -178,7 +192,7 @@ body {
 
 
 #gameOver {
-    background-color: black;
+    background: black;
     z-index: 3;
     height: 100%;
     text-align: center;
@@ -197,7 +211,7 @@ body {
 }
 
 #restart:hover {
-    background-color: #fff;
+    background: #fff;
     color: #000;
 }
 
@@ -279,7 +293,7 @@ p {
     font-size: 1.5rem;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background: #fff;
     color: #000;
     width: 4rem;
     padding-bottom: 0.4rem;
@@ -305,7 +319,16 @@ p {
 }
 
 @media (max-width:500px) {
-    
+
+    .change-language img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .change-language .margin-edit{
+        margin-right: -2.5rem;
+    }
+
     #board {
         width: 98vw;
         height: 40rem;

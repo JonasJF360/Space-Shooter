@@ -3,7 +3,7 @@
     const board = document.querySelector('#board');
     let widthBord = board.offsetWidth;
     let heightBord = board.offsetHeight;
-    
+
     const jet = document.querySelector('#jet');
     const pointsBox = document.querySelector('.points-box');
     const rocks = document.getElementsByClassName('rocks');
@@ -13,7 +13,7 @@
     const shot = document.querySelector('#shot');
     const explosion = document.querySelector('#explosion');
 
-    const level = document.querySelector('.level');
+    const level = document.querySelector('.level span');
 
 
     window.addEventListener('keydown', (e) => {
@@ -57,12 +57,12 @@
                             explosion.currentIime = 0;
                             kill--;
                             if (dificult === minDificult) {
-                                level.innerText = 'Max level'
+                                level.innerText = 'Max'
                             } else if (kill === 0) {
                                 if (currentIntervalId) clearInterval(currentIntervalId);
                                 dificultGame();
                                 atualLevel++;
-                                level.innerText = `Level ${atualLevel}`
+                                level.innerText = atualLevel
 
                                 kill = maxlevel;
                             }
@@ -94,7 +94,6 @@
 
     function dificultGame() {
         dificult <= minDificult ? dificult = minDificult : dificult -= 500;
-        console.log(dificult)
 
         currentIntervalId = setInterval(() => {
             if (widthBord !== board.offsetWidth) widthBord = board.offsetWidth;
