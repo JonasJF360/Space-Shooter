@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url("../images/space.png");
+    background: url("../images/space.svg");
     background-size: cover;
     font-family: 'Press Start 2P', cursive;
     overflow: hidden;
