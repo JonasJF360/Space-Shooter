@@ -31,6 +31,7 @@ body {
     top: 0;
     right: 0;
     margin: 2rem;
+    margin-right: calc((100vw / 2) - 240px);
 }
 
 .change-language a {
@@ -46,11 +47,11 @@ body {
     border: 0.2rem solid #fff;
 }
 
-.change-language .activate{
+.change-language .activate {
     z-index: 1;
 }
 
-.change-language .margin-edit{
+.change-language .margin-edit {
     margin-right: -3rem;
 }
 
@@ -326,20 +327,39 @@ p {
 
 @media (max-width:500px) {
 
+    body {
+        justify-content: start;
+    }
+
+    .title {
+        text-align: left;
+        width: 95vw;
+    }
+
+    .change-language {
+        margin-right: 2rem;
+    }
+
     .change-language img {
         width: 2.5rem;
         height: 2.5rem;
     }
 
-    .change-language .margin-edit{
+    .change-language .margin-edit {
         margin-right: -2.5rem;
     }
 
     #board {
         width: 98vw;
         height: 40rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 394px) {
+    .title {
+        font-size: 0.85rem;
     }
 }
 
