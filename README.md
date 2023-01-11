@@ -4,7 +4,7 @@
 
 ## Olá, esse é jogo nostalgia Space Shooter II
 
-> O objetivo principal do jogo é bem simples, você só tem que conseguir destruir o maior número de vaves inimigas possível.
+> O objetivo principal do jogo é bem simples, você só tem que conseguir destruir o maior número de naves inimigas possível.
 > Caso queira jogar clique no link abaixo e boa sorte.
 
 ### [Clique aqui]( https://jonasjf360.github.io/Space-Shooter/) para jogar.
